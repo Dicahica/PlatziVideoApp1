@@ -21,7 +21,7 @@ class SuggestionList extends Component {
   }
   render() {
     return(
-      
+
       <Layout title='Recomendado para ti'>
         <FlatList
           keyExtractor={this.keyExtractor}
