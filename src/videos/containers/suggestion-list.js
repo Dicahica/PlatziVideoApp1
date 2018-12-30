@@ -13,7 +13,7 @@ import Suggestion from '../components/suggestion.js';
 
 class SuggestionList extends Component {
   keyExtractor= (item) => item.id.toString()
-  renderEmpty=()=> <Empty text="No hay sugerencias"/>
+  renderEmpty=()=> <Empty text="Cargando sugerencias"/>
   itemSeparatorComponent=()=> <Separator/>
   renderItem=({item})=> {
     return(

@@ -8,16 +8,16 @@ import{
 
 import Empty from '../components/empty.js';
 import Separator from '../components/horizontal-separator.js';
-import Suggestion from '../components/suggestion.js';
+import Category from '../components/category.js';
 import Layout from '../components/category-list-layout.js'
 
 class CategoryList extends Component{
   keyExtractor= (item) => item.id.toString()
-  renderEmpty=()=> <Empty text="No hay sugerencias"/>
+  renderEmpty=()=> <Empty text="Cargando categorías"/>
   itemSeparatorComponent=()=> <Separator/>
   renderItem=({item})=> {
     return(
-      <Suggestion {...item}/>
+      <Category {...item}/>
     )
   }
   render(){
@@ -35,5 +35,6 @@ class CategoryList extends Component{
     )
   }
 }
+
 
 export default CategoryList
