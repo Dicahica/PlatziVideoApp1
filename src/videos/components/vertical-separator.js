@@ -8,9 +8,7 @@ import {
 
 function VerticalSeparator(props){
   return(
-    <View style={[styles.separator]}>
-      
-    </View>
+    <View style={[styles.separator]}/>
 
   )
 };
