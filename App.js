@@ -1,48 +1,21 @@
 import React, {Component} from 'react';
-import {
-  Text,
-  View,
-  } from 'react-native';
 
-import Home from './src/screens/containers/home';
-import Header from './src/sections/header.js';
-import SuggestionList from './src/videos/containers/suggestion-list';
-import API from './utils/api'
-import CategoryList from './src/videos/containers/category-list';
-import Player from './src/player/containers/player.js';
+
+
 import { Provider } from 'react-redux';
-import { PersistGate } from 'redux-persist/integration/react'
+import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from './store';
-import Loading from './src/sections/components/loading.js'
+
+import Loading from './src/sections/components/loading.js';
+import AppLayout from './src/app.js'
 
 type Props = {};
 export default class App extends Component<Props> {
-  state = {
+  //state = {
     //suggestionList:[],
     //categoryList:[],
-  }
-  async componentDidMount(){
-    const suggestionList =await API.getSuggestion(10);
-    const categoryList =await API.getMovies(10);
-    //console.log(categoryList);
-    //console.log(suggestionList);
-    //this.setState({
-      //suggestionList: movies,
-      //categoryList: categories,
-    //})
-    store.dispatch({
-      type: 'SET_CATEGORY_LIST',
-      payload: {
-        categoryList
-      }
-    })
-    store.dispatch({
-      type: 'SET_SUGGESTION_LIST',
-      payload: {
-        suggestionList
-      }
-    })
-  }
+//  }
+
   render() {
     return (
       <Provider
@@ -52,17 +25,7 @@ export default class App extends Component<Props> {
           loading={<Loading/>}
           persistor={persistor}
         >
-          <Home>
-            <Header />
-            <Player />
-            <Text>Buscador</Text>
-            <CategoryList
-              //list ={this.state.categoryList}
-            />
-            <SuggestionList
-              //list ={this.state.suggestionList}
-            />
-          </Home>
+          <AppLayout/>
         </PersistGate>
       </Provider>
 
