@@ -9,8 +9,14 @@ import{
 import Empty from '../components/empty.js';
 import Separator from '../components/horizontal-separator.js';
 import Category from '../components/category.js';
-import Layout from '../components/category-list-layout.js'
+import Layout from '../components/category-list-layout.js';
+import { connect } from 'react-redux';
 
+function mapStateToProps(state){
+  return {
+    list:state.categoryList
+  }
+}
 class CategoryList extends Component{
   keyExtractor= (item) => item.id.toString()
   renderEmpty=()=> <Empty text="Cargando categorías"/>
@@ -37,4 +43,4 @@ class CategoryList extends Component{
 }
 
 
-export default CategoryList
+export default connect(mapStateToProps)(CategoryList);
