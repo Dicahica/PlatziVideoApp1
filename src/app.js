@@ -10,7 +10,7 @@ import Header from './sections/header.js';
 import SuggestionList from './videos/containers/suggestion-list';
 import API from '../utils/api';
 import CategoryList from './videos/containers/category-list';
-import Player from './player/containers/player.js';
+import Movie from './screens/containers/movie.js';
 
 class AppLayout extends Component{
   async componentDidMount(){
@@ -36,10 +36,12 @@ class AppLayout extends Component{
     })
   }
   render(){
+    if(this.props.selectedMovie){
+      return <Movie/>
+    }
     return(
       <Home>
         <Header />
-        <Player />
         <Text>Buscador</Text>
         <CategoryList
           //list ={this.state.categoryList}
@@ -53,5 +55,10 @@ class AppLayout extends Component{
     )
   }
 }
+function mapStateToProps(state){
+  return{
+    selectedMovie:state.selectedMovie
+  }
+}
 
-export default connect(null)AppLayout;
+export default connect(mapStateToProps)(AppLayout);

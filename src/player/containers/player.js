@@ -46,7 +46,7 @@ class Player extends Component{
       <Layout
         loading={this.state.loading}
         video={
-          <Video source={{uri:'https://r2---sn-hxqp5jvhh-cvbe.googlevideo.com/videoplayback?expire=1546840368&ei=0JQyXNmBLJCHkgbkoY2wBA&dur=0.000&txp=5511222&requiressl=yes&ip=2604%3Aa880%3A2%3Ad0%3A%3A21a0%3Aa001&ipbits=0&pl=24&mime=video%2Fwebm&id=o-AFJRPg33Fp2kDRRoN3PVLyW5Tlk_vy0B3xALlum9WSWN&fvip=2&gir=yes&lmt=1540489834111687&key=cms1&itag=43&c=WEB&signature=3C7FE5B4E6B65421CD8F9F4BA2FAEAF1E5E7D434.5A265859B9854EA2AC326DE731E8485C792CE4E0&ratebypass=yes&source=youtube&clen=14923468&sparams=clen,dur,ei,expire,gir,id,ip,ipbits,itag,lmt,mime,mip,mm,mn,ms,mv,pl,ratebypass,requiressl,source&utmg=ytap1&title=CMO_ENTRENAR_A_TU_DRAGN_3_Trailer_2_Espaol_Latino_2019(youtube.com)&cms_redirect=yes&mip=190.14.235.252&mm=31&mn=sn-hxqp5jvhh-cvbe&ms=au&mt=1546818696&mv=m'}}
+          <Video source={{uri:'https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4'}}
           style={[styles.video]}
           resizeMode= "contain"
           onBuffer={this.onBuffer}

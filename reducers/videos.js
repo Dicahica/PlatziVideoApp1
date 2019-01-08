@@ -7,8 +7,8 @@ function videos(state={}, action){
     case 'SET_CATEGORY_LIST':{
       return{...state,...action.payload}
     }
-    default:
-      return state;
+    case 'SET_SELECTED_MOVIE':
+      return{ ...state,selectedMovie:action.payload.movie}
   }
   return state;
 }

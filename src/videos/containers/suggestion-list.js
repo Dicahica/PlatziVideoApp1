@@ -3,7 +3,8 @@ import{
   FlatList,
   Text,
   View,
-  StyleSheet
+  StyleSheet,
+
 
 }from 'react-native';
 import Layout from '../components/suggestion-list-layout.js';
@@ -20,10 +21,21 @@ function mapStateToProps(state){
 class SuggestionList extends Component {
   keyExtractor= (item) => item.id.toString()
   renderEmpty=()=> <Empty text="Cargando sugerencias"/>
-  itemSeparatorComponent=()=> <Separator/>
+  itemSeparatorComponent=()=> <Separator />
+  viewMovie=(item) =>{
+    this.props.dispatch({
+      type:'SET_SELECTED_MOVIE',
+      payload:{
+        movie: item,
+      }
+
+    })
+  }
   renderItem=({item})=> {
     return(
-      <Suggestion {...item}/>
+      <Suggestion {...item}
+      onPress={() => {this.viewMovie(item)  } }
+      />
     )
   }
   render() {
